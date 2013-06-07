@@ -1,0 +1,203 @@
+README For BloGTK Weblog Client
+Version 2.0
+"Broadsheet"
+
+http://blogtk.jayreding.com/
+
+CONTENTS:
+---------
+1. ABOUT BLOGTK
+2. SUPPORTED WEBLOGS
+3. REQUIRED LIBRARIES
+4. INSTALLATION
+5. UPGRADING FROM PREVIOUS VERSIONS
+6. USING BLOGTK
+  6.1  CONFIGURING ACCOUNTS
+    6.1.1  CONFIGURING WORDPRESS
+    6.1.2  CONFIGURING MOVABLE TYPE/MELODY
+    6.1.3  CONFIGURING WINDOWS LIVE SPACES	
+  6.2  USING THE BLOG MANAGER
+  6.3  USING THE POST EDITOR
+7. RELEASE NOTES
+8. PROGRAM CREDITS
+
+1. ABOUT BLOGTK:
+
+BloGTK is a weblog posting client written in Python for any platform that 
+supports Python and the GTK widget set. BloGTK allows you to connect to your 
+weblog with XML-RPC and create new posts.
+
+2. SUPPORTED WEBLOGS:
+
+ - MovableType versions 2.5 or later.
+ - Blogger
+ - WordPress 1.5 or later or WordPress.com
+ - Windows Live Spaces
+ - Expression Engine (but autoconfiguration does not work)
+ - Any blog that uses the MetaWeblog API.
+
+3. REQUIRED LIBRARIES:
+
+BloGTK requires the following programs/libraries.
+
+- Python 2.3 or higher (but BloGTK is not compatible with Python 3.0)
+- PyGTK
+- python-gnome2
+- python-gnome2-extras
+- python-gdata
+- python-webkit
+- python-feedparser
+
+BloGTK will run under other environments (such as KDE) so long as all the 
+necessary libraries are installed.
+
+4. INSTALLATION:
+
+BloGTK needs to be installed as the root user.
+
+Unpack and  install the BloGTK tarball using these commands:
+
+   'tar -xjvf <packagename>.tar.bz2'
+
+Switch to the newly created directory and type 'make install' as root and the 
+Makefile will copy the files to the correct location in your system. You do not 
+need to configure or compile BloGTK as it is written in interpreted Python code.
+
+5. UPGRADING FROM PREVIOUS VERSIONS
+
+BloGTK 2.0 uses an entirely new configuration system, and will not carry over
+your prior settings. You will have to re-enter your settings. Your old
+settings will remain should you downgrade to an earlier version of BloGTK, not
+that you would want to...
+
+6. USING BLOGTK:
+
+BloGTK 2.0 has two main screens, the blog management screen, and the post
+editor. The blog management screen lets you see all your posts, edit posts,
+delete posts, and view your blog's home page. The editor allows you to edit,
+open, and save individual posts.
+
+6.1  CONFIGURING ACCOUNTS
+
+BloGTK will open up on the Settings control panel first. First, type the name
+you wish to use for your blog account and the address of your blog's home
+page in the top two fields.
+
+BloGTK will use RSD autodiscovery to discover your blog's settings if your blog 
+system and template support it. Use the "Autodetect Settings" button to try
+autodiscovery. With luck, you will get your endpoint, blog ID, and blogging
+system fields filled automatically. If not, you will need to fill them in
+manually based on your blogging system's instructions.
+
+You will need to fill out the username and password for your blogs, these
+will not be discovered automatically.
+
+You can specify to retrieve up to 50 posts per blog. (For Blogger, you cannot
+change the number of posts to retrieve, you will always pull the latest 25.)
+This option is set by the "Get up to X Posts per Refresh" setting.
+
+6.1.1  CONFIGURING WORDPRESS
+
+WordPress requires you to enable XML-RPC before using an external editor like
+BloGTK. To do this, log in to your blog with the admin account, and go to 
+Settings, and then Writing. Check the box next to “XML-RPC” on the Writing 
+options page, and save the settings.
+
+6.1.2  CONFIGURING MOVABLE TYPE/MELODY
+
+Movable Type and Melody use a different password than your normal blog login
+password. To find this password, log into your blog control panel, then
+click your user name in the top right-hand corner. Under "Preferences" you
+will find an entry called "Web Services Password". Hit "Reveal" next to the
+entry to see the password. This is the password you must use with BloGTK.
+
+6.1.3  CONFIGURING WINDOWS LIVE SPACES
+
+Set your password as per these instructions: 
+http://msdn.microsoft.com/en-us/library/bb259698.aspx
+
+That password will be the password used in BloGTK.
+
+6.2  USING THE BLOG MANAGER
+
+BloGTK's main screen is the blog manager. On the left of the screen will
+be the list of your blogs. On the top right will be the list of your posts
+and below that will be a post preview window. To get your posts, select
+the blog you want, and hit the "Refresh" button on the toolbar. BloGTK
+will then download your posts.
+
+To edit a post, select a post in the right screen and hit the edit button.
+
+To delete a post, select the post in the right screen and hit the delete
+button. You will be asked to confirm your deletion. Once a post is deleted
+in cannot be recovered.
+
+To create a new post, select the blog you wish to create a new post for,
+and hit the new post button.
+
+The "Home" toolbar button will take you to the homepage of your blog.
+
+6.3  USING THE EDITOR
+
+BloGTK's post editor features built-in syntax highlighting and
+spellcheck. The top toolbar allows you to create a new post, open a 
+saved post file, save the post, perform cut/copy/paste operations,
+undo and redo your last text entries, or post the entry to your blog.
+
+BloGTK saves its posts to disk as XML that can be read in other
+applications. The file extension for BloGTK saved post files is 
+'.blogtk'.
+
+The second toolbar contains buttons that insert common HTML tags into
+your post. You can bold or italicize text, change the alignment of a
+text block, add a paragraph or a blockquote, create a list, or add
+a link.
+
+On the left is the main entry screen. On the top is the post title
+entry field. Below that are tabs corresponding to your main entry,
+any extended entry (if your blogging system supports it), and a
+preview of your post contents.
+
+Below that is an entry for any tags you may wish to add to your post
+(if your blogging system supporst them). Separate each tag by a
+comma.
+
+To the right is a selection box for categories, should your blogging
+system support them. You may select multiple categories.
+
+Below that are option to allow comments and trackbacks, should your
+blogging system support those options. You may save a post as a
+draft in your blogging system by selecting the checkbox on the 
+bottom right of the editor window.
+
+Under the Edit menu, you may change the date and time of a post,
+if your blogging system supports it. You may select the date with
+the calendar widget on the left, and the time with the spinbuttons
+on the right. BloGTK uses the 24-hour time system by default. The
+timestamp should be set to your local time by your blog software,
+but some blogging packages will set the time to GMT.
+
+7. RELEASE NOTES:
+
+Bug reports can be filed through the BloGTK project on Launchpad, at
+https://launchpad.net/blogtk
+
+Donations for this software would be greatly appreciated. This software is 
+totally free, but sending a few bucks to jay@jayreding.com via PayPal would 
+bring you good karma, and it'll also mean you'll get extra Developer Suck-Up 
+Club support. Plus, it will ensure that I have enough caffeine to develop new 
+versions. You can now also donate to the BloGTK project through the BloGTK 
+homepage on Sourceforge.
+
+This program was developed under Ubuntu Linux and is released under the
+Apache 2.0 license.
+
+8. PROGRAM CREDITS:
+
+Special thanks to James Henstridge for the excellent Python-GTK bindings and 
+their equally excellent documentation.
+
+Thanks to Ethan Zimmerman for his bug reports and the original BloGTK icon set.
+
+Thanks to all BloGTK users for bug reports, feature requests, and their support 
+of this application.

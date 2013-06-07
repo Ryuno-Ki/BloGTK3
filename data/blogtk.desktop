@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=BloGTK 2.0
+Comment=GTK Weblog Client
+Exec=blogtk2
+Terminal=false
+Type=Application
+Icon=blogtk-icon.png
+StartupNotify=true
+Categories=GNOME;Application;Network;

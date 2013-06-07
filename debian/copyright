@@ -1,0 +1,21 @@
+This package was debianized by Jay Reding <jay@jayreding.com>
+Sat, 12 Sep 2009 12:57:09 -0500
+
+It was downloaded from: http://launchpad.net/blogtk 
+
+Upstream Author(s): Jay Reding <jay@jayreding.com>
+
+Copyright:
+        Copyright (C) 2009 Jay Reding <jay@jayreding.com>
+	Portions Copyright (C) 2009 Google, Inc.
+
+License:
+        Released under the Apache 2.0 License, see 
+	/usr/share/common-licenses/Apache-2.0
+
+Packaging:
+        Copyright (C) 2009 by Jay Reding <jay@jayreding.com>
+        released under Apache 2.0 License, see 
+	'/usr/share/common-licenses/Apache-2.0'.
+
+

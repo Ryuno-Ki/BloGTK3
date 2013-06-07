@@ -1,0 +1,179 @@
+blogtk (2.0~ppa4~karmic) karmic; urgency=low
+
+  * Fixed major bug with WebKit preview. (LP: #435593)
+  * Fixed bug with close dialog not fuctioning properly in editor.
+  * Fixed bug preventing font selection dialog from openining.
+  * Confirmed bug fix for Fedora crashing bug. (LP: #435540)
+
+ -- Jay Reding <jay@jayreding.com>  Thu, 19 Nov 2009 14:54:32 -0600
+
+blogtk (2.0~ppa3~jaunty) jaunty; urgency=low
+
+  * Editor preview no longer autoupdates when title changes. (LP: #426104)
+  * Support for old Blogger 1.0 API.
+  * i18n: Better support for internationalization.
+  * Offline editing support. Use File/Go Offline to edit without internet
+    connection.
+
+ -- Jay Reding <wombat@serenity>  Mon, 21 Sep 2009 22:12:32 -0500
+
+blogtk (2.0~ppa2~jaunty) jaunty; urgency=low
+
+  * Fixed link insertion dialog bug
+
+ -- Jay Reding <jay@jayreding.com>  Sun, 13 Sep 2009 00:17:09 -0500
+
+blogtk (2.0~ppa1~jaunty) jaunty; urgency=low
+
+  * Complete rewrite of BloGTK codebase.
+
+ -- Jay Reding <jay@jayreding.com>  Sat, 12 Sep 2009 11:54:24 -0500
+
+blogtk (1.2~ppa1~karmic) karmic; urgency=low
+   * Appled patches from Ubuntu Jaunty repository
+   * Deprecated file selection patch from Alessio Treglia (LP: #271311)
+   * ConfigParser fix from Ralph Taylor (LP: #364745)
+
+ -- Jay Reding <jay@jayreding.com>  Mon, 03 Aug 2009 11:27:11 +0100
+
+blogtk (1.1-2ubuntu3) karmic; urgency=low
+
+  * debian/patches/zz-fix-deprecated-configparser-options.patch (LP: #364745)
+     - Python 2.6 Rev 60976 has deprecated usage of the "Default" section
+       in ConfigParser.
+     - Updated source to use "Default Server" instead of "Default".
+     - Patch file has conflict with earlier non numbered patches so prefixed 
+       with "zz" to ensure it is applied last.
+
+ -- Ralph Taylor <djnrrd@gmail.com>  Sun, 21 Jun 2009 13:58:14 +0100
+
+blogtk (1.1-2ubuntu2) hardy; urgency=low
+
+  * debian/install:
+     - Add three missing files (b-32.png, blogtk-icon.png, blogtk.glade).
+  * debian/patches/fix-deprecated-true-false.patch:
+     - Replace Gtk.TRUE with True and GTK.False with False in all
+       Python files to avoid a large amount of deprecation warnings.
+  * debian/BloGTK, debian/patches/hide-abort-traceback.patch:
+     - Catch KeyboardInterrupt exceptions to hide ugly tracebacks.
+
+ -- Siegfried-Angel Gevatter Pujals (RainCT) <rainct@ubuntu.com>  Fri, 29 Feb 2008 23:35:23 +0100
+
+blogtk (1.1-2ubuntu1) hardy; urgency=low
+
+  [ Siegfried-Angel Gevatter Pujals (RainCT) ]
+  * Complete package clean-up (this package is now only maintained in
+    Ubuntu, it was removed from Debian).
+  * debian/control:
+     - Change Maintainer field to Ubuntu MOTU Developers.
+     - Drop docbook-to-man build dependency, as the manpage has been
+       replaced by a new one written in groff (see below).
+     - Drop imagemagick build dependecy, as we don't install a 16x16
+       version of the menu anymore.
+     - Add cdbs build dependency.
+     - Move debhelper from Build-Depends-Indep to Build-Depends.
+     - Bump standards version to 3.7.3 and add a Homepage field.
+     - Fix XS-Python-Version field.
+     - Add Vcs-Bzr and Vcs-Broswer fields.
+  * debian/rules:
+     - Switch to cdbs and remove all now unneeded stuff.
+     - Add simple-patchsys.
+     - Remove the 16x16 version of the menu.
+  * debian/pycompat:
+     - Remove it, as it isn't necessary with pycentral.
+  * debian/blogtk.menu:
+     - Change section to the new "Applications/Network/Web News".
+     - Formatting changes.
+     - Rename it to debian/menu.
+  * debian/blogtk.desktop:
+     - Add a new .desktop file which respects FreeDesktop.org's
+       standards and contains Catalan and Spanish translations.
+  * debian/compat:
+     - Bump to version 5 as it has some nice features which can't harm.
+  * debian/blogtk.1, debian/blogtk.sgml, debian/manpages:
+     - Remove the old manpage and add a new one written in groff.
+     - Add a debian/manpages file to install it.
+  * debian/copyright:
+     - Change download URL to a more direct one.
+     - Add licensing information for the new manpage.
+     - Mention re-packaging.
+     - Formatting changes.
+  * debian/install:
+     - Add this files and install the files with it instead of using
+       Upstream's Makefile, which would need to be patched and is uglier.
+  * debian/blogtk.links:
+     - Rename this file to debian/links.
+     - Change the executable's name to be all lowercase.
+  * debian/BloGTK:
+     - Add this launcher (which prints a warning message and the runs
+       the applicaiton) for a clean transition to the lowercase executable.
+  * debian/blogtk.docs, debian/blogtk.dirs:
+     - Remove them.
+  * debian/patches/fix-shabangs.patch:
+     - Fix shabangs for all .py files in src/.
+  * debian/patches/fix-python25-crash.patch:
+     - Fix a crash with URLs that don't start with http/https with
+       Python 2.5, thanks to Simon Ochsenreither!
+
+ -- Siegfried-Angel Gevatter Pujals (RainCT) <rainct@ubuntu.com>  Fri, 29 Feb 2008 20:04:54 +0100
+
+blogtk (1.1-2build1) feisty; urgency=low
+
+  * Rebuild for python2.5 as the default python version.
+
+ -- Matthias Klose <doko@ubuntu.com>  Mon, 15 Jan 2007 17:53:20 +0000
+
+blogtk (1.1-2) unstable; urgency=low
+
+  * New maintainer
+  * Modify the dependences. (Closes #362828)
+
+ -- Diego Andres Sanabria (diegueus9) <diegueus9@gmail.com>  Mon, 28 Aug 2006 16:27:39 -0500
+
+blogtk (1.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Acknowledge 1.0-1.1 NMU. (Closes: #250214)
+  * Update to Standards-Version 3.6.2 (no changes required).
+  * Correct dependency on python-gnome2-extras for python gtkhtml2 module.
+    (Closes: #319274, #314867)
+  * When creating a .BloGTK configuration directory, create it with 0700
+    permissions to avoid having passwords visible to other users. (Closes:
+    #276239)
+  * Add hints to Debian menu entry. (Closes: #314216)
+
+ -- Brian Bassett <brianb@debian.org>  Fri, 17 Feb 2006 13:08:41 -0800
+
+blogtk (1.0-1.1) unstable; urgency=low
+
+  * Non Maintainer Upload.
+  * debian/control
+    - Build-depends on pkg-config.  (Closes: #250214)
+
+ -- Gustavo Franco <stratus@acm.org>  Fri, 28 May 2004 12:04:31 -0300
+
+blogtk (1.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Brian Bassett <brianb@debian.org>  Wed, 21 Apr 2004 12:23:07 -0700
+
+blogtk (0.96-1) unstable; urgency=low
+
+  * New upstream release
+  * Add python build-dep to workaround FTBFS.  (Closes: #241599)
+
+ -- Brian Bassett <brianb@debian.org>  Thu,  1 Apr 2004 22:06:53 -0800
+
+blogtk (0.95-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Brian Bassett <brianb@debian.org>  Wed, 10 Mar 2004 09:13:22 -0800
+
+blogtk (0.9-1-1) unstable; urgency=low
+
+  * Initial Release. (Closes: #217153)
+
+ -- Brian Bassett <brianb@debian.org>  Sat, 21 Feb 2004 23:40:42 -0800
+

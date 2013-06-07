@@ -1,0 +1,4 @@
+*.*~
+*.pyc
+share/blogtk2/lib/blogtk2/*.pyc
+share/blogtk2/lib/blogtk2/*.pyc?~

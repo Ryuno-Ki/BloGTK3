@@ -1,0 +1,6 @@
+bin/blogtk2 usr/bin/
+share/blogtk2/glade/* usr/share/blogtk2/glade
+share/blogtk2/res/* usr/share/blogtk2/res
+share/blogtk2/lib/blogtk2/*.py usr/share/blogtk2/lib/blogtk2
+data/blogtk-icon.png usr/share/pixmaps
+data/blogtk.desktop usr/share/applications

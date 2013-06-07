@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+
+binary-install/blogtk::
+	dh_pycentral -pblogtk
+
+clean::
+	rm -rf debian/share
+
